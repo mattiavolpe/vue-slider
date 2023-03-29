@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,21 +48,21 @@
             </div>
             <!-- /.movie_wrapper -->
 
-            <i class="fa-solid fa-chevron-up"></i>
-            <i class="fa-solid fa-chevron-down"></i>
-            <i class="fa-solid fa-play"></i>
-            <i class="fa-solid fa-arrow-rotate-left"></i>
           </div>
           <!-- /.carousel -->
+
           <div class="thumbnails">
 
-            <div class="thumbnail_wrapper" :class="index === activeImage ? 'active' : ''" v-for="(thumb, index) in movie.images">
+            <div class="thumbnail_wrapper" :class="index === activeImage ? 'active' : ''" v-for="(thumb, index) in movie.images" @click="setActiveImage(index)">
               <img class="img-fluid" :src="'./assets/'+thumb" :alt="movie.titles[index] + ' thumbnail'">
             </div>
             <!-- /.thumbnail_wrapper -->
 
           </div>
           <!-- /.thumbnails -->
+
+          <i @click="prevImage" class="fa-solid fa-chevron-up text-dark"></i>
+          <i @click="nextImage" class="fa-solid fa-chevron-down text-dark"></i>
 
         </div>
         <!-- /#carousel_wrapper -->

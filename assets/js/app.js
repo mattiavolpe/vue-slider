@@ -41,6 +41,17 @@ const { createApp } = Vue
         }
       }
     },
+    methods: {
+      prevImage() {
+        this.activeImage === 0 ? this.activeImage = this.movie.images.length - 1 : this.activeImage--;
+      },
+      nextImage() {
+        this.activeImage === this.movie.images.length - 1 ? this.activeImage = 0 : this.activeImage++;
+      },
+      setActiveImage(index) {
+        this.activeImage = index;
+      }
+    },
     mounted() {
       const myTimer = setInterval(() => {
       }, 3000);
