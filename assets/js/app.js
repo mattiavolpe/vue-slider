@@ -15,6 +15,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        autoplay: '',
         activeImage: 0,
         movie: {
           titles: [
@@ -50,10 +51,19 @@ const { createApp } = Vue
       },
       setActiveImage(index) {
         this.activeImage = index;
+      },
+      stopAutoplay() {
+        clearInterval(this.autoplay);
+      },
+      startAutoplay() {
+        this.autoplay = setInterval(() => {
+          this.nextImage();
+        }, 3000);
       }
     },
     mounted() {
-      const myTimer = setInterval(() => {
+      this.autoplay = setInterval(() => {
+        this.nextImage();
       }, 3000);
     }
   }).mount('#app')

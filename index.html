@@ -31,7 +31,7 @@
 
         <h1 class="title text-dark">THE MOVIE COVER DATABASE</h1>
   
-        <div id="carousel_wrapper" class="d-flex">
+        <div @mouseenter="stopAutoplay" @mouseleave="startAutoplay" id="carousel_wrapper" class="d-flex">
 
           <div class="carousel">
 

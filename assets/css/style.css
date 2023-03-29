@@ -68,6 +68,11 @@ body {
   position: relative;
   height: 20%;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbnail_wrapper.active {
+  border: 3px solid #e1e1e1;
 }
 
 .thumbnail_wrapper:not(.active)::after {
@@ -85,7 +90,7 @@ body {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(0, -50%);
+  transform: translate(0, -50%) scale(0.9);
   display: block;
   width: 100%;
 }
