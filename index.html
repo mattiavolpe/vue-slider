@@ -35,13 +35,13 @@
 
           <div class="carousel">
 
-            <div class="movie_wrapper position-relative h-100" :class="index === activeImage ? 'active' : ''" v-for="(image, index) in movie.images">
+            <div class="movie_wrapper position-relative h-100" :class="index === activeImage ? 'active' : ''" v-for="(movie, index) in movies">
 
-              <img :src="'./assets/'+image" :alt="movie.titles[index]">
+              <img :src="'./assets/'+movie.image" :alt="movie.title">
 
               <div class="text_wrapper">
-                <h2 class="text-light">{{movie.titles[activeImage]}}</h2>
-                <p class="text-light">{{movie.descriptions[activeImage]}}</p>
+                <h2 class="text-light">{{movies.title}}</h2>
+                <p class="text-light">{{movies.description}}</p>
               </div>
               <!-- /.text_wrapper -->
 
@@ -53,8 +53,8 @@
 
           <div class="thumbnails">
 
-            <div class="thumbnail_wrapper" :class="index === activeImage ? 'active' : ''" v-for="(thumb, index) in movie.images" @click="setActiveImage(index)">
-              <img class="img-fluid" :src="'./assets/'+thumb" :alt="movie.titles[index] + ' thumbnail'">
+            <div class="thumbnail_wrapper" :class="index === activeImage ? 'active' : ''" v-for="(thumb, index) in movies" @click="setActiveImage(index)">
+              <img class="img-fluid" :src="'./assets/'+thumb.image" :alt="thumb.title + ' thumbnail'">
             </div>
             <!-- /.thumbnail_wrapper -->
 
@@ -71,6 +71,7 @@
       <!-- /.container -->
 
     </div>
+    <!-- /#app -->
 
     <!-- EXTERNAL BOOTSTRAP JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
