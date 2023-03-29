@@ -47,10 +47,6 @@ body {
   width: 80%;
 }
 
-.movie_wrapper:not(.active) {
-  display: none;
-}
-
 .movie_wrapper .text_wrapper {
   position: absolute;
   bottom: 20px;

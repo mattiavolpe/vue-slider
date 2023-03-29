@@ -35,13 +35,13 @@
 
           <div class="carousel">
 
-            <div class="movie_wrapper position-relative h-100" :class="index === activeImage ? 'active' : ''" v-for="(movie, index) in movies">
+            <div class="movie_wrapper position-relative h-100">
 
-              <img :src="'./assets/'+movie.image" :alt="movie.title">
+              <img :src="'./assets/'+movies[activeImage].image" :alt="movies[activeImage].title">
 
               <div class="text_wrapper">
-                <h2 class="text-light">{{movies[index].title}}</h2>
-                <p class="text-light">{{movies[index].description}}</p>
+                <h2 class="text-light">{{movies[activeImage].title}}</h2>
+                <p class="text-light">{{movies[activeImage].description}}</p>
               </div>
               <!-- /.text_wrapper -->
 
