@@ -23,13 +23,13 @@
     <title>Vue Slider</title>
   </head>
   
-  <body>
+  <body class="bg-dark">
 
     <div id="app">
 
       <div class="container">
 
-        <h1 class="title text-dark">THE MOVIE COVER DATABASE</h1>
+        <h1 class="title text-light m-0">THE MOVIE COVER DATABASE</h1>
   
         <div @mouseenter="stopAutoplay" @mouseleave="startAutoplay" id="carousel_wrapper" class="d-flex">
 
@@ -39,9 +39,9 @@
 
               <img :src="'./assets/'+movies[activeImage].image" :alt="movies[activeImage].title">
 
-              <div class="text_wrapper">
+              <div class="text_wrapper bg-dark bg-opacity-50">
                 <h2 class="text-light">{{movies[activeImage].title}}</h2>
-                <p class="text-light">{{movies[activeImage].description}}</p>
+                <p class="text-light m-0 movie_description">{{movies[activeImage].description}}</p>
               </div>
               <!-- /.text_wrapper -->
 
